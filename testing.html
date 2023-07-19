@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+
+</head>
+
+<body>
+    <form id="form">
+        <input type="text" id="textinput">
+        <button id="button">Generate</button>
+    </form>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+    var form = document.getElementById('form')
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault()
+
+        var text = document.getElementById('textinput').value
+
+        window.jsPDF = window.jspdf.jsPDF;
+        var doc = new jsPDF()
+
+        doc.text(text, 20, 20)
+        doc.save('Resume.pdf')
+    })
+</script>
+
+</html>
