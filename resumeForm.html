@@ -55,8 +55,8 @@
                 <input type="text" class="form-control" id="name" required>
             </div>
             <div class="form-group">
-                <label for="tag">TagLine</label>
-                <input type="text" class="form-control" id="tag" required>
+                <label for="tag"></label>
+                <input type="text" class="form-control" id="tag" placeholder="TagLine" required>
             </div>
             <h3 class="mb-4">Contact Details</h3>
 
@@ -89,23 +89,46 @@
             <div class="form-group">
                 <label for="currentQlf">Current Qualification</label>
                 <input type="text" class="form-control" id="currentQlf" required>
+                <label for="placeQlf"></label>
+                <input type="text" class="form-control" id="placeQlf" placeholder="Place of study">
             </div>
-            <div class="form-group">
-                <label for="ten">10th</label>
-                <input type="text" class="form-control" id="ten" required>
-            </div>
+            <button type="button " class="btn btn-primary rounded-pill">ADD</button>
 
+            <h3 class="mb-4">Certification</h3>
             <div class="form-group">
-                <label for="summary">Summary</label>
-                <textarea class="form-control" id="summary" rows="3" required></textarea>
+                <label for="certificate"></label>
+                <input type="text" class="form-control" id="certificate" placeholder="Enter certificate name">
             </div>
-            <button type="submit" class="btn btn-primary">Generate Resume</button>
+            <button type="button " class="btn btn-primary rounded-pill">ADD certificate</button>
+
+            <h3 class="mb-4">Skills</h3>
+            <div class="form-group">
+                <label for="Skills"></label>
+                <input type="text" class="form-control" id="Skills" required>
+            </div>
+            <button type="button " class=" btn btn-primary rounded-pill">ADD Skills</button>
+
+            <h3 class="mb-4">Projects</h3>
+            <div class="form-group">
+                <label for="pname">Project Name</label>
+                <input type="text" class="form-control" id="pname" required>
+            </div>
+            <div class="form-group">
+                <label for="summary"></label>
+                <textarea class="form-control" id="summary" rows="3" placeholder="Project Overview"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary rounded-pill">Generate Resume</button>
         </form>
     </div>
     <div class="container my-4">
         <div id="generatedResume"></div>
     </div>
 
+    <style>
+        h3 {
+            padding-top: 20px;
+        }
+    </style>
 
 </body>
 
