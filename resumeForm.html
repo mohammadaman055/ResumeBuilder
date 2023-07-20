@@ -3,11 +3,10 @@
 
 <head>
     <script src="resumegen.js"></script>
-
     <title>Resume Builder</title>
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
 </head>
 
 <body>
@@ -51,28 +50,29 @@
 
         <h3 class="mb-4">Education Qualification</h3>
         <div class="form-group">
-            <label for="currentQlf">Current Qualification</label>
+            <!-- <label for="currentQlf">Current Qualification</label>
             <input type="text" class="form-control" id="currentQlf">
             <label for="placeQlf"></label>
-            <input type="text" class="form-control" id="placeQlf" placeholder="Place of study">
+            <input type="text" class="form-control" id="placeQlf" placeholder="Place of study"> -->
         </div>
         <button type="button " class="btn btn-primary rounded-pill" id="btn1">ADD</button>
-
         <div class="inp-grp"></div>
 
         <h3 class="mb-4">Certification</h3>
         <div class="form-group">
-            <label for="certificate"></label>
-            <input type="text" class="form-control" id="certificate" placeholder="Enter certificate name">
+            <!-- <label for="certificate"></label>
+            <input type="text" class="form-control" id="certificate" placeholder="Enter certificate name"> -->
         </div>
-        <button type="button " class="btn btn-primary rounded-pill">ADD certificate</button>
+        <button type="button " class="btn btn-primary rounded-pill" id="btnCertificate">ADD certificate</button>
+        <div class="inp-certificate"></div>
 
         <h3 class="mb-4">Skills</h3>
         <div class="form-group">
-            <label for="Skills"></label>
-            <input type="text" class="form-control" id="Skills">
+            <!-- <label for="Skills"></label>
+            <input type="text" class="form-control" id="Skills"> -->
         </div>
-        <button type="button " class=" btn btn-primary rounded-pill">ADD Skills</button>
+        <button type="button " class=" btn btn-primary rounded-pill" id="btnSkills">ADD Skills</button>
+        <div class="inp-skills"></div>
 
         <h3 class="mb-4">Projects</h3>
         <div class="form-group">
@@ -83,9 +83,13 @@
             <label for="summary"></label>
             <textarea class="form-control" id="summary" rows="3" placeholder="Project Overview"></textarea>
         </div>
-        <button class="btn btn-primary rounded-pill rbuild" id="rbuild">Generate Resume</button>
-    </div>
+        <button type="submit" class="btn btn-primary rounded-pill" id="rbuild">Generate Resume</button>
 
+    </div>
+    <div class="container my-4">
+        <div id="generatedResume"></div>
+    </div>
+    </div>
     <style>
         h3 {
             padding-top: 20px;
