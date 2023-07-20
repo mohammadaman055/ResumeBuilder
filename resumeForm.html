@@ -2,15 +2,18 @@
 <html lang="en">
 
 <head>
-    <script src="resumegen.js"></script>
+    <script src="resume.js"></script>
+    <link rel="stylesheet" href="resume.css">
     <title>Resume Builder</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 
 <body>
-    <div class="container my-4">
-        <h1 class="mb-4">Resume Builder</h1>
+    <div class=" mycontainer my-4">
+
+        <h1 class="mb-4 text-center">Resume Builder</h1>
+
 
         <div class="form-group">
             <label for="name">Name</label>
@@ -70,15 +73,18 @@
             <label for="summary"></label>
             <textarea class="form-control" id="summary" rows="3" placeholder="Project Overview"></textarea>
         </div>
-
-        <button class="btn btn-primary rounded-pill" id="rbuild">Generate Resume</button>
+        <div class="col-md-12 text-center">
+            <button class="btn btn-primary rounded-pill text-center" id="rbuild">Generate Resume</button>
+            <button class="btn btn-warning rounded-pill text-center" id="reset">Reset/Cancel</button>
+        </div>
     </div>
-    <style>
-        h3 {
-            padding-top: 20px;
-        }
-    </style>
 
 </body>
+
+<style>
+    body {
+        background-color: rgb(229, 227, 113);
+    }
+</style>
 
 </html>
