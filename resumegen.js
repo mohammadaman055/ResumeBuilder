@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
         placeQlf.type = "text";
         placeQlf.placeholder = "Qualification Place";
 
-        const btn = document.createElement("button"); // Corrected button creation
+        const btn = document.createElement("button"); 
         btn.type = "button";
         btn.textContent = "Remove";
         btn.addEventListener("click", removeInput);
 
         const flex = document.createElement("div"); // Corrected class name for the div
-        flex.className = "form-group flex"; // Adding "form-group" class to div
+        flex.className = "form-group flex"; 
 
         const inputGroup = document.querySelector(".inp-grp");
         inputGroup.appendChild(flex);
