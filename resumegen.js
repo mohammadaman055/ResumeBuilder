@@ -1,95 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-    var adin = document.getElementById("btn1");
-    var adin1 = document.getElementById("btnCertificate");
-    var adin2 = document.getElementById("btnSkills");
-
-    adin.addEventListener("click", function () {
-        addInput();
-    });
-    adin1.addEventListener("click", function () {
-        addInputCertificate();
-    });
-    adin2.addEventListener("click", function () {
-        addInputSkills();
-    });
-
-    function addInput() {
-        const currentQlf = document.createElement("input");
-        currentQlf.type = "text";
-        currentQlf.placeholder = "Qualification Certificate";
-
-        const placeQlf = document.createElement("input");
-        placeQlf.type = "text";
-        placeQlf.className = "container my-4"
-        placeQlf.id = "qualification";
-        placeQlf.placeholder = "Qualification Place";
-
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.textContent = "Remove";
-        btn.className = "btn btn-primary rounded-pill"
-        btn.addEventListener("click", removeInput);
-
-        const flex = document.createElement("div"); // Corrected class name for the div
-        flex.className = "form-group flex";
-
-        const inputGroup = document.querySelector(".inp-grp");
-        inputGroup.appendChild(flex);
-        flex.appendChild(currentQlf);
-        flex.appendChild(placeQlf);
-        flex.appendChild(btn);
-    }
-
-    function addInputCertificate() {
-        const certificateName = document.createElement("input");
-        certificateName.type = "text";
-        certificateName.className = "container my-4"
-        certificateName.placeholder = "Certification Course";
-
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.textContent = "Remove";
-        btn.className = "btn btn-primary rounded-pill"
-        btn.addEventListener("click", removeInput);
-
-        const flex = document.createElement("div"); // Corrected class name for the div
-        flex.className = "form-group flex";
-
-        const inputGroup = document.querySelector(".inp-certificate");
-        inputGroup.appendChild(flex);
-        flex.appendChild(certificateName);
-        flex.appendChild(btn);
-    }
-
-    function addInputSkills() {
-        const skillType = document.createElement("input");
-        skillType.type = "text";
-        skillType.className = "container my-4"
-        skillType.placeholder = "Skills";
-
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.textContent = "Remove";
-        btn.className = "btn btn-primary rounded-pill"
-        btn.addEventListener("click", removeInput);
-
-        const flex = document.createElement("div"); // Corrected class name for the div
-        flex.className = "form-group flex";
-
-        const inputGroup = document.querySelector(".inp-skills");
-        inputGroup.appendChild(flex);
-        flex.appendChild(skillType);
-        flex.appendChild(btn);
-    }
-
-    function removeInput() {
-        const flex = this.parentElement;
-        flex.remove();
-    }
-
-
-
+    
     var bld = document.getElementById("rbuild");
 
     bld.addEventListener("click", function () {
@@ -100,12 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const address = document.getElementById("address").value;
         const gitId = document.getElementById("gitId").value;
         const linkedInId = document.getElementById("LinkedIn").value;
-        const currentQlf = document.getElementById("currentQlf").value;
-        const placeQlf = document.getElementById("placeQlf").value;
-        const certificate = document.getElementById("certificate").value;
-        const skills = document.getElementById("Skills").value;
-        const pname = document.getElementById("pname").value;
-        const summary = document.getElementById("summary").value;
 
         window.jsPDF = window.jspdf.jsPDF;
         var doc = new jsPDF()
@@ -124,6 +28,98 @@ document.addEventListener("DOMContentLoaded", function () {
 
         doc.save('Resume.pdf')
     })
+
+    var adin = document.getElementById("btn1");
+    var adin1 = document.getElementById("btnCertificate");
+    var adin2 = document.getElementById("btnSkills");
+
+    adin.addEventListener("click", function () {
+        addInput();
+    });
+    adin1.addEventListener("click", function () {
+        addInputCertificate();
+    });
+    adin2.addEventListener("click", function () {
+        addInputSkills();
+    });
+
+function addInput() {
+    const currentQlf = document.createElement("input");
+    currentQlf.type = "text";
+    currentQlf.className = "form-group d-flex flex-column form-control";
+    currentQlf.id = "qualification";
+    currentQlf.placeholder = "Qualification Certificate";
+
+    const placeQlf = document.createElement("input");
+    placeQlf.type = "text";
+    placeQlf.className = "form-group d-flex flex-column form-control";
+    placeQlf.id = "qualificationplace";
+    placeQlf.placeholder = "Qualification Place";
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = "Remove";
+    btn.className = "btn btn-primary rounded-pill btn-danger";
+    btn.addEventListener("click", removeInput);
+
+    const flex = document.createElement("div"); // Corrected class name for the div
+    flex.className = "form-group flex";
+
+    const inputGroup = document.querySelector(".inp-grp");
+    inputGroup.appendChild(flex);
+    flex.appendChild(currentQlf);
+    flex.appendChild(placeQlf);
+    flex.appendChild(btn);
+}
+
+
+    function addInputCertificate() {
+        const certificateName = document.createElement("input");
+        certificateName.type = "text";
+        certificateName.className = "form-group d-flex flex-column form-control"
+        certificateName.placeholder = "Certification Course";
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = "Remove";
+        btn.className = "btn btn-primary rounded-pill btn-danger"
+        btn.addEventListener("click", removeInput);
+
+        const flex = document.createElement("div"); // Corrected class name for the div
+        flex.className = "form-group flex";
+
+        const inputGroup = document.querySelector(".inp-certificate");
+        inputGroup.appendChild(flex);
+        flex.appendChild(certificateName);
+        flex.appendChild(btn);
+    }
+
+    function addInputSkills() {
+        const skillType = document.createElement("input");
+        skillType.type = "text";
+        skillType.className = "form-group d-flex flex-column form-control"
+        skillType.placeholder = "Skills";
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = "Remove";
+        btn.className = "btn btn-primary rounded-pill btn-danger"
+        btn.addEventListener("click", removeInput);
+
+        const flex = document.createElement("div"); // Corrected class name for the div
+        flex.className = "form-group flex";
+
+        const inputGroup = document.querySelector(".inp-skills");
+        inputGroup.appendChild(flex);
+        flex.appendChild(skillType);
+        flex.appendChild(btn);
+    }
+
+    function removeInput() {
+        const flex = this.parentElement;
+        flex.remove();
+    }
+
 });
 
 
