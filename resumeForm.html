@@ -3,8 +3,9 @@
 
 <head>
     <script src="resumegen.js"></script>
+    <!-- <script src="tusharjs.js"></script> -->
     <title>Resume Builder</title>
-    <!-- Add Bootstrap CSS -->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
@@ -45,83 +46,82 @@ $('#generatedResume').html(resumeContent);
 
 
 <body>
-    <!-- <div class="container my-4"> -->
-    <h1 class="mb-4">Resume Builder</h1>
-    <form id="resumeForm">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name">
-        </div>
-        <div class="form-group">
-            <label for="tag"></label>
-            <input type="text" class="form-control" id="tag" placeholder="TagLine">
-        </div>
-        <h3 class="mb-4">Contact Details</h3>
+    <div class="container my-4">
+        <h1 class="mb-4">Resume Builder</h1>
+        <form id="resumeForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="tag"></label>
+                <input type="text" class="form-control" id="tag" placeholder="TagLine">
+            </div>
+            <h3 class="mb-4">Contact Details</h3>
 
-        <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" class="form-control" id="phone">
-        </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" class="form-control" id="phone">
+            </div>
 
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email">
-        </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
 
-        <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" class="form-control" id="address">
-        </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <input type="text" class="form-control" id="address">
+            </div>
 
-        <div class="form-group">
-            <label for="gitId">GitHUb-Id</label>
-            <input type="url" class="form-control" id="gitId">
-        </div>
+            <div class="form-group">
+                <label for="gitId">GitHUb-Id</label>
+                <input type="url" class="form-control" id="gitId">
+            </div>
 
-        <div class="form-group">
-            <label for="LinkedIn">LinkedIn-Id</label>
-            <input type="url" class="form-control" id="LinkedIn">
-        </div>
+            <div class="form-group">
+                <label for="LinkedIn">LinkedIn-Id</label>
+                <input type="url" class="form-control" id="LinkedIn">
+            </div>
 
-        <h3 class="mb-4">Education Qualification</h3>
-        <div class="form-group">
-            <label for="currentQlf">Current Qualification</label>
-            <input type="text" class="form-control" id="currentQlf">
-            <label for="placeQlf"></label>
-            <input type="text" class="form-control" id="placeQlf" placeholder="Place of study">
-            <button type="button " class="btn btn-primary rounded-pill">ADD</button>
-        </div>
+            <h3 class="mb-4">Education Qualification</h3>
+            <div class="form-group">
+                <label for="currentQlf">Current Qualification</label>
+                <input type="text" class="form-control" id="currentQlf">
+                <label for="placeQlf"></label>
+                <input type="text" class="form-control" id="placeQlf" placeholder="Place of study">
+            </div>
+            <button type="button " class="btn btn-primary rounded-pill" id="btn1">ADD</button>
 
-        <h3 class="mb-4">Certification</h3>
-        <div class="form-group">
-            <label for="certificate"></label>
-            <input type="text" class="form-control" id="certificate" placeholder="Enter certificate name">
+            <div class="inp-grp"></div>
+
+            <h3 class="mb-4">Certification</h3>
+            <div class="form-group">
+                <label for="certificate"></label>
+                <input type="text" class="form-control" id="certificate" placeholder="Enter certificate name">
+            </div>
             <button type="button " class="btn btn-primary rounded-pill">ADD certificate</button>
-        </div>
 
-        <h3 class="mb-4">Skills</h3>
-        <div class="form-group">
-            <label for="Skills"></label>
-            <input type="text" class="form-control" id="Skills">
+            <h3 class="mb-4">Skills</h3>
+            <div class="form-group">
+                <label for="Skills"></label>
+                <input type="text" class="form-control" id="Skills">
+            </div>
             <button type="button " class=" btn btn-primary rounded-pill">ADD Skills</button>
-        </div>
 
-        <h3 class="mb-4">Projects</h3>
-        <div class="form-group">
-            <label for="pname">Project Name</label>
-            <input type="text" class="form-control" id="pname">
-        </div>
-        <div class="form-group">
-            <label for="summary"></label>
-            <textarea class="form-control" id="summary" rows="3" placeholder="Project Overview"></textarea>
-        </div>
+            <h3 class="mb-4">Projects</h3>
+            <div class="form-group">
+                <label for="pname">Project Name</label>
+                <input type="text" class="form-control" id="pname">
+            </div>
+            <div class="form-group">
+                <label for="summary"></label>
+                <textarea class="form-control" id="summary" rows="3" placeholder="Project Overview"></textarea>
+            </div>
 
-    </form>
-    <button class="btn btn-primary rounded-pill rbuild" id="rbuild">Generate Resume</button>
-    <!-- </div> -->
-    <!-- <div class="container my-4">
-        <div id="generatedResume"></div>
-    </div> -->
+        </form>
+        <button class="btn btn-primary rounded-pill rbuild" id="rbuild">Generate Resume</button>
+    </div>
 
     <style>
         h3 {
@@ -132,8 +132,3 @@ $('#generatedResume').html(resumeContent);
 </body>
 
 </html>
-
-<script>
-    console.log("hi");
-
-</script>

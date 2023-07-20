@@ -1,10 +1,46 @@
-{/* <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script> */}
-
 document.addEventListener("DOMContentLoaded", function () {
-  var bld = document.getElementById("rbuild");
+    
+        var adin = document.getElementById("btn1");
+
+    adin.addEventListener("click", function () {
+        addInput();
+    });
+
+    function addInput() {
+        const currentQlf = document.createElement("input");
+        currentQlf.type = "text";
+        currentQlf.placeholder = "Qualification Certificate";
+
+        const placeQlf = document.createElement("input");
+        placeQlf.type = "text";
+        placeQlf.placeholder = "Qualification Place";
+
+        const btn = document.createElement("button"); // Corrected button creation
+        btn.type = "button";
+        btn.textContent = "Remove";
+        btn.addEventListener("click", removeInput);
+
+        const flex = document.createElement("div"); // Corrected class name for the div
+        flex.className = "form-group flex"; // Adding "form-group" class to div
+
+        const inputGroup = document.querySelector(".inp-grp");
+        inputGroup.appendChild(flex);
+        flex.appendChild(currentQlf);
+        flex.appendChild(placeQlf);
+        flex.appendChild(btn);
+    }
+
+    function removeInput() {
+        const flex = this.parentElement;
+        flex.remove();
+    }
+
+    
+    
+    var bld = document.getElementById("rbuild");
 
   bld.addEventListener("click", function () {
-    const name = document.getElementById("name").value;
+        const name = document.getElementById("name").value;
         const tag = document.getElementById("tag").value;
         const phone = document.getElementById("phone").value;
         const email = document.getElementById("email").value;
@@ -22,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
         var doc = new jsPDF()
 
 
-const startY = 20; // Starting Y-coordinate
-const lineHeight = 10; // Line height (adjust as needed)
+const startY = 20; 
+const lineHeight = 10; 
 
 doc.text(name, 20, startY);
 doc.text(tag, 20, startY + lineHeight);
