@@ -43,18 +43,24 @@ document.addEventListener("DOMContentLoaded", function () {
         addInputSkills();
     });
 
+let qnum = 1;
+let qpnum = 1;
+let cnum = 1;
+let snum = 1;
+    
 function addInput() {
+    
     const currentQlf = document.createElement("input");
     currentQlf.type = "text";
     currentQlf.className = "form-group d-flex flex-column form-control";
-    currentQlf.id = "qualification";
-    currentQlf.placeholder = "Qualification Certificate";
+    currentQlf.id = "qualification " + qnum;
+    currentQlf.placeholder = "Qualification Certificate " + qnum;
 
     const placeQlf = document.createElement("input");
     placeQlf.type = "text";
     placeQlf.className = "form-group d-flex flex-column form-control";
-    placeQlf.id = "qualificationplace";
-    placeQlf.placeholder = "Qualification Place";
+    placeQlf.id = "qualificationplace "+qpnum;
+    placeQlf.placeholder = "Qualification Place "+qpnum;
 
     const btn = document.createElement("button");
     btn.type = "button";
@@ -70,6 +76,9 @@ function addInput() {
     flex.appendChild(currentQlf);
     flex.appendChild(placeQlf);
     flex.appendChild(btn);
+
+     qnum++;
+    qpnum++;
 }
 
 
@@ -77,7 +86,8 @@ function addInput() {
         const certificateName = document.createElement("input");
         certificateName.type = "text";
         certificateName.className = "form-group d-flex flex-column form-control"
-        certificateName.placeholder = "Certification Course";
+        certificateName.id="certificate"+cnum;
+        certificateName.placeholder = "Certification Course"+cnum;
 
         const btn = document.createElement("button");
         btn.type = "button";
@@ -92,13 +102,16 @@ function addInput() {
         inputGroup.appendChild(flex);
         flex.appendChild(certificateName);
         flex.appendChild(btn);
+
+        cnum++;
     }
 
     function addInputSkills() {
         const skillType = document.createElement("input");
         skillType.type = "text";
         skillType.className = "form-group d-flex flex-column form-control"
-        skillType.placeholder = "Skills";
+        skillType.id="skill"+snum
+        skillType.placeholder = "Skills"+snum;
 
         const btn = document.createElement("button");
         btn.type = "button";
@@ -113,11 +126,18 @@ function addInput() {
         inputGroup.appendChild(flex);
         flex.appendChild(skillType);
         flex.appendChild(btn);
+
+        snum++;
     }
 
+    //num to dec saparately
     function removeInput() {
         const flex = this.parentElement;
         flex.remove();
+        qnum--;
+        qpnum--;
+        cnum--;
+        qnum--
     }
 
 });
