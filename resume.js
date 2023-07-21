@@ -26,6 +26,20 @@ document.addEventListener("DOMContentLoaded", function () {
         doc.text(gitId, 20, startY + lineHeight * 5);
         doc.text(linkedInId, 20, startY + lineHeight * 6);
 
+        //printing dynamic skills
+
+        const certificatesData = getCertificatesData();
+    let cstartY = 20 + lineHeight * 9; // Start after the previous content
+    certificatesData.forEach((certificate, index) => {
+        doc.text("Certificate " + (index + 1) + ": " + certificate, 20, cstartY + lineHeight * index);
+    });
+
+        const skillsData = getSkillsData();
+    let sstartY = startY + lineHeight * certificatesData.length + 10; // Add some spacing between certificates and skills
+    skillsData.forEach((skill, index) => {
+        doc.text("Skill " + (index + 1) + ": " + skill, 20, sstartY + lineHeight * index);
+    });
+
         doc.save('Resume.pdf')
     })
 
@@ -139,6 +153,29 @@ function addInput() {
         cnum--;
         qnum--
     }
+
+
+
+    //accessing data
+
+    //skill
+    function getSkillsData() {
+    const skillsData = [];
+    const skillsInputs = document.querySelectorAll(".inp-skills input");
+    skillsInputs.forEach((input) => {
+        skillsData.push(input.value);
+    });
+
+    return skillsData;
+    }
+    function getCertificatesData() {
+    const certificatesData = [];
+    const certificateInputs = document.querySelectorAll(".inp-certificate input");
+    certificateInputs.forEach((input) => {
+        certificatesData.push(input.value);
+    });
+    return certificatesData;
+}
 
 });
 
