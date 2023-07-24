@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const address = document.getElementById("address").value;
         const gitId = document.getElementById("gitId").value;
         const linkedInId = document.getElementById("LinkedIn").value;
+        const Project = document.getElementById("pname").value;
+        const Projectdesc = document.getElementById("pdesc").value;
 
         window.jsPDF = window.jspdf.jsPDF;
         var doc = new jsPDF()
@@ -25,8 +27,12 @@ document.addEventListener("DOMContentLoaded", function () {
         doc.text(address, 20, startY + lineHeight * 4);
         doc.text(gitId, 20, startY + lineHeight * 5);
         doc.text(linkedInId, 20, startY + lineHeight * 6);
+        doc.text(Project, 20, startY + lineHeight * 7);
+        doc.text(Projectdesc, 20, startY + lineHeight * 8);
 
         //printing dynamic skills
+
+        
 
         const certificatesData = getCertificatesData();
     let cstartY = 20 + lineHeight * 9; // Start after the previous content
@@ -38,6 +44,19 @@ document.addEventListener("DOMContentLoaded", function () {
     let sstartY = startY + lineHeight * certificatesData.length + 10; // Add some spacing between certificates and skills
     skillsData.forEach((skill, index) => {
         doc.text("Skill " + (index + 1) + ": " + skill, 20, sstartY + lineHeight * index);
+    });
+
+
+     qualificationsData = getQualificationsData();
+    let qstartY = 20 + lineHeight * 9; // Start after the previous content
+    qualificationsData.forEach((qualification, index) => {
+        doc.text("Qualification " + (index + 1) + ": " + qualification, 20, qstartY + lineHeight * index);
+    });
+
+     placesData = getPlacesData();
+    let qpstartY = startY + lineHeight * qualificationsData.length + 10; // Add some spacing between qualifications and places
+    placesData.forEach((place, index) => {
+        doc.text("Place of Qualification " + (index + 1) + ": " + place, 20, qpstartY + lineHeight * index);
     });
 
         doc.save('Resume.pdf')
@@ -61,9 +80,12 @@ let qnum = 1;
 let qpnum = 1;
 let cnum = 1;
 let snum = 1;
-    
+     var qualificationsData = [];
+      var  placesData = [];
+
+
 function addInput() {
-    
+
     const currentQlf = document.createElement("input");
     currentQlf.type = "text";
     currentQlf.className = "form-group d-flex flex-column form-control";
@@ -75,6 +97,9 @@ function addInput() {
     placeQlf.className = "form-group d-flex flex-column form-control";
     placeQlf.id = "qualificationplace "+qpnum;
     placeQlf.placeholder = "Qualification Place "+qpnum;
+
+    qualificationsData.push(currentQlf);
+    placesData.push(placeQlf);
 
     const btn = document.createElement("button");
     btn.type = "button";
@@ -94,6 +119,14 @@ function addInput() {
      qnum++;
     qpnum++;
 }
+
+function getQualificationsData() {
+    return qualificationsData.map((input) => input.value);
+}
+function getPlacesData() {
+    return placesData.map((input) => input.value);
+}
+
 
 
     function addInputCertificate() {
